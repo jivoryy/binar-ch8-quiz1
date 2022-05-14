@@ -1,0 +1,172 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Dokumentasi ini diperuntukkan API dari repository Github dengan link [https://github.com/miqbalhamdani/todos-api]. Ini adalah quiz Chapter 8 [Menyusun Dokumentasi API] untuk kelas fasilitator Iqbal Hamdani. Semoga membantu.",
+    "version": "1.0.0",
+    "title": "miqbalhamdani's ToDo API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "johanes.b.gading@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/todo",
+  "tags": [
+    {
+      "name": "todo",
+      "description": "All about /todo endpoint"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/todo": {
+      "post": {
+        "tags": [
+          "todo"
+        ],
+        "summary": "Add a new ToDo to the list",
+        "description": "",
+        "operationId": "todoController.create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "ToDo object that needs to be added to the list",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "the added data in JSON Format"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "todo"
+        ],
+        "summary": "Get list of all ToDo",
+        "description": "",
+        "operationId": "todoController.findAll",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "All ToDo list"
+          }
+        }
+      }
+    },
+    "/todo/{id}": {
+      "put": {
+        "tags": [
+          "todo"
+        ],
+        "summary": "Update an existing ToDo to the list",
+        "description": "",
+        "operationId": "todoController.update",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "description": "The ToDo ID"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "ToDo object that needs to be updated to the list",
+            "required": false,
+            "schema": {
+              "$ref": "#/definitions/ToDo"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully updating todo"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "todo"
+        ],
+        "summary": "Delete an existing ToDo to the list",
+        "description": "",
+        "operationId": "todoController.delete",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "description": "The ToDo ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deleting todo"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ToDo": {
+      "type": "object",
+      "required": [
+        "name",
+        "photoUrls"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Create Quizz with Swagger Material"
+        },
+        "description": {
+          "type": "string",
+          "example": "About create API documentation from existing application"
+        },
+        "isDone": {
+          "type": "boolean"
+        },
+        "user": {
+          "type": "string",
+          "example": "iqbal"
+        }
+      }
+    }
+  }
+}

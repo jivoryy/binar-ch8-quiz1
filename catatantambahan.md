@@ -1,0 +1,3 @@
+Mas Iqbal, response balikan APInya sukses semua. Jadi nggak mungkin error. Error pun kalau respon 5xx, bukan 4xx. Tadi sih aku cobain post tanpa body masih jalan.. aku cobain put tanpa body dan salah id juga masih jalan.. delete juga masih jalan padahal tak isi param todo/100.. Jadi user nggak mungkin 4xx responsenya.. Nah kalau 5xx kan nggak khususkan di codenya, jadi dokumentasi responnya cuma 200 semua.. Terimakasih mas Iqbal :)
+
+Btw, endpoint buat swaggerUI aku pakenya /swaggerUI bukan /docs.. Soalnya kebiasaan kantor begitu.. Biar kalau dokumentasinya pake swagger ya langsung endpoint /swaggerUI, kalau Wiki Markdown langsung /wikimd jadi cepet kalau mau ngecek docs versi apa hehehehhe
